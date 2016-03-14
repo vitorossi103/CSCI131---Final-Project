@@ -1,8 +1,9 @@
-import pygame
 import sys
+
+import pygame
+
 from main import constants
-from main.Game import Game, SCREEN
-from main.Button import Button
+from main.game import Game, SCREEN
 
 pygame.init()
 clock = pygame.time.Clock()

@@ -1,16 +1,16 @@
-import pygame
-from main import constants
 from main import helpers
+from main.constants import *
 
 
 class Button:
-    def __init__(self, x, y, width, height, text, screen, font='Arial'):
+    def __init__(self, x, y, width, height, text, screen, button_id, font='Arial'):
         self.__x = x
         self.__y = y
         self.__width = width
         self.__height = height
         self.__text = text
         self.__screen = screen
+        self.__id = button_id
 
         self.rect = pygame.Rect(x, y, width, height)
         self.font = pygame.font.SysFont(font, 24)
@@ -19,15 +19,12 @@ class Button:
         pass
 
     def draw(self):
-        pygame.draw.rect(self.__screen, constants.BLACK, self.rect, 1)
+        pygame.draw.rect(self.__screen, BLACK, self.rect, 1)
         self.__draw_text()
 
-    # todo: center text in rectangle
+    # todo: center text in rectangle (not super important; functionality > appearance)
     def __draw_text(self):
-        # self.__screen.blit(self.font.render(self.__text, True, constants.BLACK), (self.rect.centerx - 16,
-        #                                                                           self.rect.centery))
-
-        helpers.render_text(self.__text, self.font, self.rect, constants.BLACK, constants.BLACK)
+        helpers.render_text(self.__text, self.font, self.rect, BLACK, WHITE)
 
     def get_x(self):
         return self.__x
@@ -43,3 +40,6 @@ class Button:
 
     def get_text(self):
         return self.__text
+
+    def get_id(self):
+        return self.__id
