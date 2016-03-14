@@ -6,8 +6,7 @@ class Game:
     def __init__(self):
         self.__buttons = []
 
-        self.add_button(Button(0, 0, 100, 100, "test", SCREEN, ''))
-        self.add_button(Button(101, 0, 100, 200, "Gather Resource", SCREEN, ''))
+        self.add_button(Button(100, 600, 400, 100, "Gather Resource", SCREEN, 'gather_resource'))
 
     def update(self):
         mouse_x, mouse_y = pygame.mouse.get_pos()

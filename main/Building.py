@@ -1,9 +1,9 @@
 class Building:
-    def __init__(self, affect):
+    def __init__(self, modifier):
         """
-        :param affect:
+        :param modifier: how much affects player's resource gathering
         :return:
 
          Building objects will affect Player's resource / sec
         """
-        pass
+        self.modifier = modifier

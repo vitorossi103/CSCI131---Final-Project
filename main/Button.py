@@ -24,7 +24,7 @@ class Button:
 
     # todo: center text in rectangle (not super important; functionality > appearance)
     def __draw_text(self):
-        helpers.render_text(self.__text, self.font, self.rect, BLACK, WHITE)
+        helpers.render_text(self.__text, self.font, self.rect, BLACK, 1)
 
     def get_x(self):
         return self.__x

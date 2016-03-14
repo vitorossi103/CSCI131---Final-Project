@@ -3,7 +3,7 @@ from main.constants import SCREEN
 
 # just to note, this is not mine. Found this online
 
-def render_text(string, font, rect, text_color, background_color, justification=0):
+def render_text(string, font, rect, text_color, justification=0):
     # Returns a surface containing the passed text string, reformatted
     # to fit within the given rect, word-wrapping as necessary. The text
     # will be anti-aliased.
@@ -44,11 +44,11 @@ def render_text(string, font, rect, text_color, background_color, justification=
         if line != "":
             temp_surface = font.render(line, 1, text_color)
             if justification == 0:
-                SCREEN.blit(temp_surface, (rect.x, accumulated_height))
+                SCREEN.blit(temp_surface, (rect.x, rect.y + accumulated_height))
             elif justification == 1:
-                SCREEN.blit(temp_surface, ((rect.width - temp_surface.get_width()) / 2, accumulated_height))
+                SCREEN.blit(temp_surface, ((rect.width - temp_surface.get_width()) / 2, rect.y + accumulated_height))
             elif justification == 2:
-                SCREEN.blit(temp_surface, (rect.width - temp_surface.get_width(), accumulated_height))
+                SCREEN.blit(temp_surface, (rect.width - temp_surface.get_width(), rect.y + accumulated_height))
             else:
                 print("Invalid justification argument: " + str(justification))
         accumulated_height += font.size(line)[1]
