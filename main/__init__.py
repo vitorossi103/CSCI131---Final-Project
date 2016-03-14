@@ -1,6 +1,5 @@
 import pygame
 import sys
-
 from main import constants
 from main.Game import Game, SCREEN
 from main.Button import Button
@@ -11,18 +10,18 @@ clock = pygame.time.Clock()
 game = Game()
 
 while True:
-	for e in pygame.event.get():
-		if e.type is pygame.QUIT:
-			sys.exit()
+    for e in pygame.event.get():
+        if e.type is pygame.QUIT:
+            sys.exit()
 
-	game.update()
+    game.update()
 
-	SCREEN.fill(constants.WHITE)
+    SCREEN.fill(constants.WHITE)
 
-	game.draw()
+    game.draw()
 
-	pygame.display.flip()
+    pygame.display.flip()
 
-	clock.tick(60)
+    clock.tick(60)
 
 pygame.quit()
