@@ -1,5 +1,6 @@
 import pygame
 from main import constants
+from main import helpers
 
 
 class Button:
@@ -15,7 +16,6 @@ class Button:
         self.font = pygame.font.SysFont(font, 24)
 
     def update(self):
-        # todo: check for clicks (done in Game class)
         pass
 
     def draw(self):
@@ -24,8 +24,10 @@ class Button:
 
     # todo: center text in rectangle
     def __draw_text(self):
-        self.__screen.blit(self.font.render(self.__text, True, constants.BLACK), (self.rect.centerx - 16,
-                                                                                  self.rect.centery))
+        # self.__screen.blit(self.font.render(self.__text, True, constants.BLACK), (self.rect.centerx - 16,
+        #                                                                           self.rect.centery))
+
+        helpers.render_text(self.__text, self.font, self.rect, constants.BLACK, constants.BLACK)
 
     def get_x(self):
         return self.__x
