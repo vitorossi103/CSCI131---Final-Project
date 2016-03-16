@@ -2,16 +2,12 @@ class Player:
     def __init__(self):
         # resource_sec = resources / second, resource_click = resources / click
         self.__resource_amt, self.__resource_sec, self.__resources_click = 0, 0, 1
-        self.__building_list = [[]]  # will be a list of lists
 
     def modify_resources(self, amt):
         self.__resource_amt += amt
 
     def get_total_resources(self):
         return self.__resource_amt
-
-    def add_building(self):
-        pass
 
     def modify_resource_sec(self, amt):
         self.__resource_sec += amt

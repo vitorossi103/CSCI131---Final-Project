@@ -1,3 +1,4 @@
+import main
 from main import helpers
 from main.constants import *
 
@@ -14,6 +15,7 @@ class Button:
 
         self.rect = pygame.Rect(x, y, width, height)
         self.font = pygame.font.SysFont(font, 24)
+        self.player = main.game.player
 
     def update(self):
         pass
@@ -24,7 +26,10 @@ class Button:
 
     # todo: fix text rendering
     def __draw_text(self):
-        helpers.render_text(self.__text, self.font, self.rect, BLACK, 0)
+        if self.__id is 'add_resource':
+            helpers.render_text(self.__text + str(self.player.get_total_resources()), self.font, self.rect, BLACK, 0)
+        elif self.__id is 'add_building':
+            pass
 
     def get_x(self):
         return self.__x
