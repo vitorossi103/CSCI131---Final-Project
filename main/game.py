@@ -1,9 +1,13 @@
 from main.button import Button
 from main.constants import *
+from main.player import Player
 
 
 class Game:
     def __init__(self):
+        self.player = Player()
+
+        # initialize all buttons
         self.__buttons = []
 
         self.add_button(Button(400, 600, 400, 100, "Gather Resource", SCREEN, 'gather_resource'))
@@ -15,7 +19,8 @@ class Game:
             b.update()
             if b.get_x() < mouse_x < b.get_x() + b.get_width() and b.get_y() < mouse_y < b.get_y() + b.get_height():
                 if mouse_one:
-                    print("clicked button")
+                    self.player.modify_resources(self.player.get_resources_click())
+                    print("Player has", self.player.get_total_resources(), "resources")
 
     def draw(self):
         for b in self.__buttons:
@@ -26,3 +31,6 @@ class Game:
 
     def add_button(self, btn):
         self.__buttons.append(btn)
+
+    def delete_button(self, ind):
+        self.__buttons.pop(ind)

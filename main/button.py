@@ -22,9 +22,9 @@ class Button:
         pygame.draw.rect(self.__screen, BLACK, self.rect, 1)
         self.__draw_text()
 
-    # todo: center text in rectangle (not super important; functionality > appearance)
+    # todo: fix text rendering
     def __draw_text(self):
-        helpers.render_text(self.__text, self.font, self.rect, BLACK, 1)
+        helpers.render_text(self.__text, self.font, self.rect, BLACK, 0)
 
     def get_x(self):
         return self.__x

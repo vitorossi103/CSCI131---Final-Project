@@ -52,5 +52,3 @@ def render_text(string, font, rect, text_color, justification=0):
             else:
                 print("Invalid justification argument: " + str(justification))
         accumulated_height += font.size(line)[1]
-
-    # return surface
